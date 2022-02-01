@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from "react";
 import {updateGame,} from "./updateGame";
-import {copyArr} from "./copyArr";
+import {copyArr} from "./Utils/copyArr";
 
-export const CellsTable: React.FC<{ isActive: boolean }> = ({isActive}) => {
-    const [arr, setArr] = useState(Array.from(
-        {length: innerHeight / 20 - 4},
-        () => Array.from({length: Math.floor(innerWidth / 20)-9}, () => 0)
-    ))
+export const CellsTable: React.FC<{
+    arr: number[][],
+    setArr: (arr: number[][]) => void,
+    isActive: boolean
+}> = ({arr, setArr, isActive}) => {
 
     useEffect(() => {
         let interval: NodeJS.Timer

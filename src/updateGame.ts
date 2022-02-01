@@ -1,4 +1,4 @@
-import {copyArr} from "./copyArr";
+import {copyArr} from "./Utils/copyArr";
 
 const shiftCoordinate = (arr: number[][], base: number, shift: number, isI: boolean) => {
     const length = isI ? arr.length : arr[0].length;
