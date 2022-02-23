@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import {CellsTable} from "./CellsTable";
-import {createZeroArray} from "./Utils/createZeroArray";
+import {createInitialArray} from "./Utils/createInitialArray";
 
 function App() {
     const [isActive, setIsActive] = useState(false)
-    const [arr, setArr] = useState(createZeroArray())
-    const clearArray = () => setArr(createZeroArray())
+    const [arr, setArr] = useState(createInitialArray('glider'))
+    const clearArray = useCallback(() => setArr(createInitialArray()), [setArr])
 
     return (
         <div className="App">
